@@ -6,7 +6,11 @@
 </head>
 <body>
 
-<script>i = 0</script>
+<script>i = 0
+setTimeout(function(){
+  jsoxford.className = 'on'
+}, 100)
+</script>
 <button onclick="jsoxford.className=++i%2?'on':'off'">Cycle</button>
 
 <div id="jsoxford">
