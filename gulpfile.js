@@ -3,6 +3,7 @@ var less = require('gulp-less');
 var minifyCss = require('gulp-minify-css');
 var sourcemaps = require('gulp-sourcemaps');
 var connect = require('gulp-connect');
+var autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('default', ['less'], function() {
 
@@ -20,6 +21,7 @@ gulp.task('less', function () {
   return gulp.src('style.less')
     .pipe(sourcemaps.init())
     .pipe(less())
+    .pipe(autoprefixer())
     .pipe(minifyCss())
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('.'))
